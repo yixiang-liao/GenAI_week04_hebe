@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>田馥甄 Hebe Tien｜個人音樂作品互動策展展覽</title>
+  <meta name="description" content="專為初次探索田馥甄個人音樂作品設計的互動策展網站。深度解析六張錄音室專輯、金曲獎紀錄、獨立單曲 Live in Life、三次大型巡演與「田調」野地小巡演精神。">
+  <meta name="keywords" content="田馥甄, Hebe Tien, To Hebe, My Love, 渺小, 日常, 無人知曉, 要去什麼地方, 樂來樂好, 何樂音樂, 金曲獎, Live in Life, 田調">
+  
+  <!-- Open Graph / Facebook / Line -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="田馥甄 Hebe Tien｜個人音樂作品互動策展展覽">
+  <meta property="og:description" content="從 S.H.E 到獨立策展型歌手：完整探索田馥甄 2010-2026 六張錄音室專輯與音樂進化軌跡。">
+  
+  <!-- Google Fonts: Noto Serif TC, Noto Sans TC, Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & CSS VARIABLES
+       ========================================================================== */
+    :root {
+      /* Base Colors */
+      --bg-primary: #0f1115;
+      --bg-surface: #171a21;
+      --bg-surface-elevated: #20242f;
+      --text-main: #e6e8ec;
+      --text-muted: #8b92a0;
+      --text-gold: #d4af37;
+      --accent-sage: #889e87;
+      --accent-blue: #7093b1;
+      --accent-warm: #c8966a;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-medium: rgba(255, 255, 255, 0.18);
+      
+      /* Typography */
+      --font-serif: 'Noto Serif TC', serif;
+      --font-sans: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-en: 'Cormorant Garamond', Georgia, serif;
+      
+      /* Transition speed */
+      --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-medium: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: 0.2s ease;
+    }
+
+    /* Album Specific Theme Dynamic Overrides */
+    body.theme-alb-1 {
+      --bg-primary: #12141a;
+      --bg-surface: #1a1e28;
+      --text-gold: #e2b04c;
+      --accent-theme: #d96b43;
+    }
+    body.theme-alb-2 {
+      --bg-primary: #151318;
+      --bg-surface: #211c26;
+      --text-gold: #e0aa65;
+      --accent-theme: #b3739c;
+    }
+    body.theme-alb-3 {
+      --bg-primary: #0a0e14;
+      --bg-surface: #121824;
+      --text-gold: #9bb5ce;
+      --accent-theme: #4a7c9d;
+    }
+    body.theme-alb-4 {
+      --bg-primary: #141611;
+      --bg-surface: #1e221a;
+      --text-gold: #cfd16f;
+      --accent-theme: #8aa342;
+    }
+    body.theme-alb-5 {
+      --bg-primary: #121215;
+      --bg-surface: #1b1b22;
+      --text-gold: #c2a688;
+      --accent-theme: #947e68;
+    }
+    body.theme-alb-6 {
+      --bg-primary: #0a1114;
+      --bg-surface: #111d24;
+      --text-gold: #73baaf;
+      --accent-theme: #3d8880;
+    }
+
+    /* Reset & Global Elements */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+    }
+
+    body {
+      overflow-x: hidden;
+      transition: background-color var(--transition-slow), color var(--transition-slow);
+    }
+
+    /* Typography Defaults */
+    h1, h2, h3, h4, .serif-font {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    .en-title {
+      font-family: var(--font-en);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: var(--text-main);
+      font-weight: 300;
+      text-align: justify;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    /* Selection & Scrollbar */
+    ::-selection {
+      background: rgba(212, 175, 55, 0.3);
+      color: #fff;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+    }
+
+    /* Utility Layout Classes */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-padding {
+      padding: 7rem 0;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid var(--border-medium);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--text-gold);
+      margin-bottom: 1rem;
+    }
+
+    /* Header & Navigation */
+    header.site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 17, 21, 0.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all var(--transition-medium);
+    }
+
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+    }
+
+    .brand-logo span {
+      font-family: var(--font-en);
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-left: 0.5rem;
+    }
+
+    nav.nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav.nav-links a {
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+      position: relative;
+    }
+
+    nav.nav-links a:hover,
+    nav.nav-links a.active {
+      color: var(--text-main);
+    }
+
+    nav.nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--text-gold);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: radial-gradient(circle at 50% 40%, rgba(32, 36, 47, 0.6) 0%, rgba(15, 17, 21, 1) 75%);
+      text-align: center;
+      padding-top: 5rem;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-en);
+      font-size: 1.1rem;
+      letter-spacing: 0.3em;
+      color: var(--text-gold);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      line-height: 1.3;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 3rem;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.9rem 2rem;
+      border: 1px solid var(--border-medium);
+      border-radius: 30px;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      transition: all var(--transition-medium);
+    }
+
+    .hero-cta:hover {
+      background: var(--text-main);
+      color: var(--bg-primary);
+      border-color: var(--text-main);
+    }
+
+    /* Section Header */
+    .section-header {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .section-header .en-sub {
+      font-family: var(--font-en);
+      font-size: 1rem;
+      color: var(--text-gold);
+      letter-spacing: 0.25em;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+    }
+
+    /* Section 1: About Hebe Timeline */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-statement {
+      font-size: 1.25rem;
+      line-height: 1.9;
+      font-family: var(--font-serif);
+      color: #f0f2f5;
+      border-left: 2px solid var(--text-gold);
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-flow {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline-flow::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--border-subtle);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 0.5rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--text-gold);
+      transform: translateX(-3px);
+    }
+
+    .timeline-year {
+      font-family: var(--font-en);
+      font-size: 1.2rem;
+      color: var(--text-gold);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Section 2: Discography (The Core) */
+    .discography-nav {
+      position: sticky;
+      top: 70px;
+      z-index: 100;
+      background: rgba(15, 17, 21, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 4rem;
+    }
+
+    .discography-menu {
+      display: flex;
+      justify-content: space-between;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 0.3rem;
+    }
+
+    .disc-nav-item {
+      white-space: nowrap;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      padding: 0.4rem 0.8rem;
+      border-radius: 15px;
+      transition: all var(--transition-fast);
+    }
+
+    .disc-nav-item.active,
+    .disc-nav-item:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .album-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 3rem;
+      margin-bottom: 6rem;
+      transition: border-color var(--transition-medium);
+    }
+
+    .album-card:hover {
+      border-color: var(--border-medium);
+    }
+
+    .album-header-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 3.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .album-cover-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+
+    .album-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .album-cover-wrapper:hover .album-cover-img {
+      transform: scale(1.03);
+    }
+
+    .album-meta-num {
+      font-family: var(--font-en);
+      font-size: 1rem;
+      color: var(--text-gold);
+      letter-spacing: 0.2em;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .album-meta-title {
+      font-size: 2.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .album-meta-en {
+      font-family: var(--font-en);
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      font-style: italic;
+    }
+
+    .album-quick-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 1rem 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 1.5rem;
+      font-size: 0.88rem;
+    }
+
+    .info-label {
+      color: var(--text-muted);
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .info-val {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    /* Mode Switcher Buttons (Official Concept vs Critic's View) */
+    .view-toggle-bar {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .toggle-btn {
+      padding: 0.8rem 1.2rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      position: relative;
+      transition: color var(--transition-fast);
+    }
+
+    .toggle-btn.active {
+      color: var(--text-gold);
+      font-weight: 500;
+    }
+
+    .toggle-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-gold);
+    }
+
+    .perspective-content {
+      display: none;
+      animation: fadeIn var(--transition-medium);
+    }
+
+    .perspective-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Structured Review Block */
+    .critic-analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .analysis-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      padding: 1.2rem;
+      border-radius: 4px;
+    }
+
+    .analysis-card h5 {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--text-gold);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .analysis-card p {
+      font-size: 0.9rem;
+      color: #cfd4dc;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    /* Golden Melody Awards Box */
+    .gma-box {
+      background: rgba(212, 175, 55, 0.05);
+      border-left: 3px solid var(--text-gold);
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .gma-title {
+      font-size: 0.9rem;
+      color: var(--text-gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .gma-list {
+      list-style: none;
+      font-size: 0.88rem;
+    }
+
+    .gma-list li {
+      margin-bottom: 0.4rem;
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+    }
+
+    .gma-tag {
+      font-size: 0.75rem;
+      padding: 0.1rem 0.4rem;
+      background: rgba(212, 175, 55, 0.2);
+      color: var(--text-gold);
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /* Tracklist Accordion */
+    .tracklist-wrapper {
+      margin-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.5rem;
+    }
+
+    .tracklist-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0.8rem 0;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .tracklist-toggle span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .track-item {
+      padding: 0.6rem 0.8rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 4px;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .track-num {
+      font-family: var(--font-en);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      width: 20px;
+    }
+
+    .track-key {
+      margin-left: auto;
+      font-size: 0.7rem;
+      color: var(--text-gold);
+      border: 1px solid rgba(212,175,55,0.3);
+      padding: 0 0.3rem;
+      border-radius: 2px;
+    }
+
+    /* Section 4: Singles & Live in Life */
+    .singles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .single-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 2rem;
+      transition: transform var(--transition-medium);
+    }
+
+    .single-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .single-year {
+      font-family: var(--font-en);
+      color: var(--text-gold);
+      font-size: 0.9rem;
+    }
+
+    .single-title {
+      font-size: 1.4rem;
+      margin: 0.3rem 0 1rem 0;
+    }
+
+    /* Live Tours Section */
+    .tours-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .tour-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+    }
+
+    .tour-meta h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tour-meta p.tour-period {
+      font-family: var(--font-en);
+      color: var(--text-gold);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Section 6: 田調 Fieldwork Feature */
+    .fieldwork-feature {
+      background: linear-gradient(135deg, rgba(20,26,22,1) 0%, rgba(15,17,21,1) 100%);
+      border: 1px solid rgba(136, 158, 135, 0.3);
+      border-radius: 12px;
+      padding: 4rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fieldwork-feature::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(136, 158, 135, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .fieldwork-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .quote-box {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #d1d8cf;
+      border-left: 2px solid var(--accent-sage);
+      padding-left: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    /* Section 7: Where Should I Start Guide */
+    .starter-quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .starter-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      transition: all var(--transition-medium);
+      cursor: pointer;
+    }
+
+    .starter-card:hover {
+      border-color: var(--text-gold);
+      transform: translateY(-50px);
+    }
+
+    .starter-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .starter-pref {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+    }
+
+    .starter-rec {
+      font-size: 0.9rem;
+      color: var(--text-gold);
+      font-weight: 600;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 4rem 0 2rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Scroll Reveal Animation Styles */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 900px) {
+      .about-grid,
+      .album-header-grid,
+      .tour-box,
+      .fieldwork-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .album-cover-wrapper {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+
+      nav.nav-links {
+        display: none; /* Mobile menu can be simplified for clean scroll */
+      }
+    }
+
+    /* Accessibility / Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <a href="#hero" class="brand-logo">田馥甄 <span>HEBE TIEN</span></a>
+    <nav class="nav-links">
+      <a href="#about">生涯脈絡</a>
+      <a href="#discography">六張專輯</a>
+      <a href="#singles">獨立單曲</a>
+      <a href="#tours">巡迴演出</a>
+      <a href="#fieldwork">田調精神</a>
+      <a href="#guide">新手入口</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-content">
+      <p class="hero-subtitle">CURATED MUSIC DISCOVERY</p>
+      <h1 class="hero-title">從流行標籤到野地歌者<br>田馥甄的聲音策展地圖</h1>
+      <p class="hero-desc">
+        這不是維基百科，而是一場專為新聽眾準備的聲音巡禮。<br>
+        帶你讀懂六張專輯的演變、金曲獎背後的製作脈絡，以及獨立單曲與野地「田調」的靈魂。
+      </p>
+      <a href="#about" class="hero-cta">
+        <span>開啟聆聽旅程</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 1: ABOUT HEBE -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="en-sub">ARTIST JOURNEY</span>
+        <h2>About Hebe｜音樂生涯脈絡</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="reveal-on-scroll">
+          <blockquote class="about-statement">
+            「歌唱是我認識世界的方式，也是我探索自己內心最直接的語言。」
+          </blockquote>
+          <p>
+            華語樂壇罕見成功從極致商業女團（S.H.E）轉型為具備高度個人審美與獨立音樂策展氣質的華語女歌手。田馥甄的個人生涯，即是一部「尋找自我、練習放下、歸於自然」的聲音進化史。
+          </p>
+        </div>
+
+        <div class="timeline-flow reveal-on-scroll">
+          <div class="timeline-item">
+            <div class="timeline-year">2001 - 2009</div>
+            <div class="timeline-title">S.H.E 時代：國民女團的高光淬鍊</div>
+            <div class="timeline-desc">作為女子天團 S.H.E 成員，積累了豐富的演唱實力、舞台氣場與廣大的樂迷基礎，為日後的個人音樂風格奠定基石。</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2010</div>
+            <div class="timeline-title">單飛不解散：《To Hebe》震撼登場</div>
+            <div class="timeline-desc">華研國際時期正式推出首張個人專輯《To Hebe》，以獨立文青與流行樂交融的色彩驚豔樂壇，成功建立個人歌者識別度。</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2018.09.11</div>
+            <div class="timeline-title">自立門戶：創立「樂來樂好」</div>
+            <div class="timeline-desc">與華研國際約滿後，田馥甄創立個人藝人經紀公司「樂來樂好有限公司（A TUNE MUSIC）」，全面主導自身音樂與生涯規劃。</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2019.04.30</div>
+            <div class="timeline-title">結盟「何樂音樂」：音樂版圖新篇章</div>
+            <div class="timeline-desc">宣告與新成立的「何樂音樂」展開音樂戰略合作，開啟《無人知曉》專輯製作與後續音樂作品的發行企劃。</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2020 - 至今</div>
+            <div class="timeline-title">金曲封后與《田調 Live in Life》野地探索</div>
+            <div class="timeline-desc">榮獲第 32 屆金曲獎最佳華語女歌手，音樂觸角從大型體育館延伸至鹽田、高原等自然場域，展現成熟歌者的生命張力。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: DISCOGRAPHY (CORE CORE) -->
+  <section id="discography" class="section-padding" style="background: rgba(0,0,0,0.2);">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="en-sub">STUDIO ALBUMS</span>
+        <h2>Discography｜六張錄音室專輯進化史</h2>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-top:0.5rem;">滾動瀏覽 2010 至 2026 年的音樂轉變，點擊下方專輯可快速切換。</p>
+      </div>
+
+      <!-- Quick Nav Sticky Bar -->
+      <div class="discography-nav">
+        <div class="discography-menu">
+          <a href="#alb-1" class="disc-nav-item active">01 To Hebe (2010)</a>
+          <a href="#alb-2" class="disc-nav-item">02 My Love (2011)</a>
+          <a href="#alb-3" class="disc-nav-item">03 渺小 (2013)</a>
+          <a href="#alb-4" class="disc-nav-item">04 日常 (2016)</a>
+          <a href="#alb-5" class="disc-nav-item">05 無人知曉 (2020)</a>
+          <a href="#alb-6" class="disc-nav-item">06 要去什麼地方 (2026)</a>
+        </div>
+      </div>
+
+      <!-- ALBUM 01 -->
+      <article id="alb-1" class="album-card reveal-on-scroll" data-theme="theme-alb-1">
+        <div class="album-header-grid">
+          <div class="album-cover-wrapper">
+            <img class="album-cover-img" src="https://upload.wikimedia.org/wikipedia/zh/b/b3/To_Hebe.jpg" alt="To Hebe 專輯封面" loading="lazy">
+          </div>
+          <div>
+            <span class="album-meta-num">01 / FIRST ALBUM</span>
+            <h3 class="album-meta-title">To Hebe</h3>
+            <div class="album-meta-en">To Hebe</div>
+            <div class="album-quick-info">
+              <div><span class="info-label">發行日期</span><span class="info-val">2010.09.03</span></div>
+              <div><span class="info-label">發行廠牌</span><span class="info-val">華研國際音樂</span></div>
+              <div><span class="info-label">核心音樂風格</span><span class="info-val">Pop-Rock / Alt-Pop</span></div>
+            </div>
+            <p style="font-size:0.95rem; color:var(--text-muted);">
+              田馥甄個人音樂事業的立基之作。擺脫女子團體的甜美框限，向樂壇宣告屬於田馥甄（Hebe）獨特嗓音與個人審美的誕生。
+            </p>
+          </div>
+        </div>
+
+        <!-- Mode Switcher -->
+        <div class="view-toggle-bar">
+          <button class="toggle-btn active" onclick="switchView('alb-1', 'official')">官方企劃概念 (Official Concept)</button>
+          <button class="toggle-btn" onclick="switchView('alb-1', 'critic')">專業樂評觀點 (Critic's View)</button>
+        </div>
+
+        <div id="alb-1-official" class="perspective-content active">
+          <p><strong>官方概念：</strong>專輯名稱《To Hebe》既是獻給自己，也是透過自我對話獻給世界。將「愛自己才能愛別人」、「關注環保與心靈」等主題融入歌詞，展現多面彩色的 Hebe。</p>
+        </div>
+
+        <div id="alb-1-critic" class="perspective-content">
+          <div class="critic-analysis-grid">
+            <div class="analysis-card">
+              <h5>Composition & Production</h5>
+              <p>由王治平統籌，陳珊妮、袁惟仁、黃淑惠等創作者傾力打造。編曲融合輕搖滾、民謠與電子元素，展現極強的歌曲擴張力。</p>
+            </div>
+            <div class="analysis-card">
+              <h5>Vocal & Sound Style</h5>
+              <p>展示了極具辨識度的真假音轉換與清亮聲線，擺脫團體合唱的限制，獨唱聲線呈現出冷冽與溫暖並存的質感。</p>
+            </div>
+            <div class="analysis-card">
+              <h5>Sequencing & Evolution</h5>
+              <p>曲序從自信直白的〈To Hebe〉開場，接續抒情大歌〈寂寞寂寞就好〉，成功兼顧獨立音樂氣質與主流市場流行度。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GMA Section -->
+        <div class="gma-box">
+          <div class="gma-title">第 22 屆金曲獎紀錄</div>
+          <ul class="gma-list">
+            <li><span class="gma-tag">獲獎</span> 最佳單曲製作人獎：王治平〈LOVE！〉</li>
+            <li><span class="gma-tag">獲獎</span> 最佳專輯包裝獎：聶永真《To Hebe》</li>
+            <li><span class="gma-tag">入圍</span> 最佳華語專輯獎、最佳編曲人獎（簡銘耀）、最佳音樂錄影帶獎（徐筠軒）</li>
+          </ul>
+        </div>
+
+        <!-- Tracklist -->
+        <div class="tracklist-wrapper">
+          <button class="tracklist-toggle" onclick="toggleTracklist('alb-1-tracks')">
+            <b>完整曲目 Tracklist (11 首)</b>
+            <span id="alb-1-tracks-status">點擊展開 ▼</span>
+          </button>
+          <div id="alb-1-tracks" class="track-grid" style="display:none;">
+            <div class="track-item"><span class="track-num">01</span> Love?</div>
+            <div class="track-item"><span class="track-num">02</span> To Hebe <span class="track-key">主打</span></div>
+            <div class="track-item"><span class="track-num">03</span> 離島</div>
+            <div class="track-item"><span class="track-num">04</span> 沒有管理員的公寓</div>
+            <div class="track-item"><span class="track-num">05</span> 寂寞寂寞就好 <span class="track-key">熱門</span></div>
+            <div class="track-item"><span class="track-num">06</span> 妳</div>
+            <div class="track-item"><span class="track-num">07</span> 我想我不會愛你</div>
+            <div class="track-item"><span class="track-num">08</span> 超級瑪麗</div>
+            <div class="track-item"><span class="track-num">09</span> ให้อภัย (給小孩)</div>
+            <div class="track-item"><span class="track-num">10</span> 愛著愛著就永遠</div>
+            <div class="track-item"><span class="track-num">11</span> LOVE !</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ALBUM 02 -->
+      <article id="alb-2" class="album-card reveal-on-scroll" data-theme="theme-alb-2">
+        <div class="album-header-grid">
+          <div class="album-cover-wrapper">
+            <img class="album-cover-img" src="https://upload.wikimedia.org/wikipedia/zh/3/30/My_Love_Hebe.jpg" alt="My Love 專輯封面" loading="lazy">
+          </div>
+          <div>
+            <span class="album-meta-num">02 / SECOND ALBUM</span>
+            <h3 class="album-meta-title">My Love</h3>
+            <div class="album-meta-en">My Love</div>
+            <div class="album-quick-info">
+              <div><span class="info-label">發行日期</span><span class="info-val">2011.09.02</span></div>
+              <div><span class="info-label">發行廠牌</span><span class="info-val">華研國際音樂</span></div>
+              <div><span class="info-label">核心音樂風格</span><span class="info-val">Chamber Pop / Vocal Pop</span></div>
+            </div>
+            <p style="font-size:0.95rem; color:var(--text-muted);">
+              將「愛」的視角從個人情緒升華至宏大的生命哲學，音樂編制引入古典管弦樂，大氣且充滿人文底蘊。
+            </p>
+          </div>
+        </div>
+
+        <div class="view-toggle-bar">
+          <button class="toggle-btn active" onclick="switchView('alb-2', 'official')">官方企劃概念</button>
+          <button class="toggle-btn" onclick="switchView('alb-2', 'critic')">專業樂評觀點</button>
+        </div>
+
+        <div id="alb-2-official" class="perspective-content active">
+          <p><strong>官方概念：</strong>以「愛」為核心主題，探討愛的各種面向——包括對萬物的愛、失戀後的療癒、以及對愛情的執著與信仰。視覺前往花蓮自然場域取景，展現寬廣胸懷。</p>
+        </div>
+
+        <div id="alb-2-critic" class="perspective-content">
+          <div class="critic-analysis-grid">
+            <div class="analysis-card">
+              <h5>Arrangement & Sound</h5>
+              <p>大量運用管弦樂與鋼琴編制（如〈My Love〉、〈魔鬼中的天使〉），營造精緻如古典劇院般的聆聽空間感。</p>
+            </div>
+            <div class="analysis-card">
+              <h5>Lyrics & Themes</h5>
+              <p>陳信延、張簡君偉、施人誠等詞曲創作者交出細緻文本，將都市人的孤獨與勇敢刻畫得極具畫面感。</p>
+            </div>
+            <div class="analysis-card">
+              <h5>Critical Positioning</h5>
+              <p>這張專輯奠定了田馥甄「大氣抒情」與「獨立氣質流行樂」的完美平衡，是入圍金曲獎最高紀錄作品之一。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gma-box">
+          <div class="gma-title">第 23 屆金曲獎紀錄（榮獲 7 項重磅提名）</div>
+          <ul class="gma-list">
+            <li><span class="gma-tag">個人入圍</span> 最佳華語女歌手獎：田馥甄</li>
+            <li><span class="gma-tag">專輯入圍</span> 最佳華語專輯獎《My Love》</li>
+            <li><span class="gma-tag">製作入圍</span> 最佳專輯製作人獎（王治平）、最佳單曲製作人獎（王治平〈請你給我好一點的情敵〉）</li>
+            <li><span class="gma-tag">創作/視覺</span> 最佳作曲人獎（鄭楠）、最佳作詞人獎（李格弟）、最佳音樂錄影帶獎（比爾賈）</li>
+          </ul>
+        </div>
+
+        <div class="tracklist-wrapper">
+          <button class="tracklist-toggle" onclick="toggleTracklist('alb-2-tracks')">
+            <b>完整曲目 Tracklist (10 首)</b>
+            <span id="alb-2-tracks-status">點擊展開 ▼</span>
+          </button>
+          <div id="alb-2-tracks" class="track-grid" style="display:none;">
+            <div class="track-item"><span class="track-num">01</span> 烏托邦</div>
+            <div class="track-item"><span class="track-num">02</span> 要說什麼</div>
+            <div class="track-item"><span class="track-num">03</span> My Love <span class="track-key">主打</span></div>
+            <div class="track-item"><span class="track-num">04</span> 請你給我好一點的情敵</div>
+            <div class="track-item"><span class="track-num">05</span> 影子的影子</div>
+            <div class="track-item"><span class="track-num">06</span> 魔鬼中的天使 <span class="track-key">熱門</span></div>
+            <div class="track-item"><span class="track-num">07</span> 無事生非</div>
+            <div class="track-item"><span class="track-num">08</span> 花花世界</div>
+            <div class="track-item"><span class="track-num">09</span> 妳太狂熱</div>
+            <div class="track-item"><span class="track-num">10</span> 綁架愛情</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ALBUM 03 -->
+      <article id="alb-3" class="album-card reveal-on-scroll" data-theme="theme-alb-3">
+        <div class="album-header-grid">
+          <div class="album-cover-wrapper">
+            <img class="album-cover-img" src="https://upload.wikimedia.org/wikipedia/zh/8/87/Insignificance.jpg" alt="渺小 專輯封面" loading="lazy">
+          </div>
+          <div>
+            <span class="album-meta-num">03 / THIRD ALBUM</span>
+            <h3 class="album-meta-title">渺小</h3>
+            <div class="album-meta-en">Insignificance</div>
+            <div class="album-quick-info">
+              <div><span class="info-label">發行日期</span><span class="info-val">2013.11.29</span></div>
+              <div><span class="info-label">發行廠牌</span><span class="info-val">華研國際音樂</span></div>
+              <div><span class="info-label">核心音樂風格</span><span class="info-val">Electronic-Rock / Post-Rock Concept</span></div>
+            </div>
+            <p style="font-size:0.95rem; color:var(--text-muted);">
+              遠赴冰島拍攝視覺，概念啟發自辛波絲卡詩集《在一顆小沙粒裏的可能》。音樂美學極具震撼力，展現自我剖析的哲思。
+            </p>
+          </div>
+        </div>
+
+        <div class="view-toggle-bar">
+          <button class="toggle-btn active" onclick="switchView('alb-3', 'official')">官方企劃概念</button>
+          <button class="toggle-btn" onclick="switchView('alb-3', 'critic')">專業樂評觀點</button>
+        </div>
+
+        <div id="alb-3-official" class="perspective-content active">
+          <p><strong>官方概念：</strong>「對偉大的世界冷漠，對渺小的自己自滿。」在浩瀚自然面前體驗自我的渺小，從而產生謙卑與對生命的敬畏。</p>
+        </div>
+
+        <div id="alb-3-critic" class="perspective-content">
+          <div class="critic-analysis-grid">
+            <div class="analysis-card">
+              <h5>Sound Design</h5>
+              <p>〈渺小〉引領冰冷冷冽的電子搖滾（Electronic Rock），後續銜接〈你就不要想起我〉強烈情感抒情曲，聽感對比極致。</p>
+            </div>
+            <div class="analysis-card">
+              <h5>Vocal Delivery</h5>
+              <p>歌者在吟唱與爆發力之間游刃有餘，聲線在電子聲景中宛如冰原上獨行的聲音，風格十分鮮明。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gma-box">
+          <div class="gma-title">第 25 屆金曲獎紀錄</div>
+          <ul class="gma-list">
+            <li><span class="gma-tag">入圍</span> 最佳音樂錄影帶獎：比爾賈〈渺小〉</li>
+            <li><span class="gma-tag">入圍</span> 最佳專輯包裝獎：聶永真《渺小》</li>
+          </ul>
+        </div>
+
+        <div class="tracklist-wrapper">
+          <button class="tracklist-toggle" onclick="toggleTracklist('alb-3-tracks')">
+            <b>完整曲目 Tracklist (10 首)</b>
+            <span id="alb-3-tracks-status">點擊展開 ▼</span>
+          </button>
+          <div id="alb-3-tracks" class="track-grid" style="display:none;">
+            <div class="track-item"><span class="track-num">01</span> 渺小 <span class="track-key">主打</span></div>
+            <div class="track-item"><span class="track-num">02</span> 矛盾</div>
+            <div class="track-item"><span class="track-num">03</span> 終身大事</div>
+            <div class="track-item"><span class="track-num">04</span> 不醉不會</div>
+            <div class="track-item"><span class="track-num">05</span> 你就不要想起我 <span class="track-key">熱門</span></div>
+            <div class="track-item"><span class="track-num">06</span> 無常</div>
+            <div class="track-item"><span class="track-num">07</span> 愛著愛著就永遠</div>
+            <div class="track-item"><span class="track-num">08</span> 口袋的溫度</div>
+            <div class="track-item"><span class="track-num">09</span> 提燈籠的人</div>
+            <div class="track-item"><span class="track-num">10</span> 禮物</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ALBUM 04 -->
+      <article id="alb-4" class="album-card reveal-on-scroll" data-theme="theme-alb-4">
+        <div class="album-header-grid">
+          <div class="album-cover-wrapper">
+            <img class="album-cover-img" src="https://upload.wikimedia.org/wikipedia/zh/a/a2/DAY_BY_DAY.jpg" alt="日常 專輯封面" loading="lazy">
+          </div>
+          <div>
+            <span class="album-meta-num">04 / FOURTH ALBUM</span>
+            <h3 class="album-meta-title">日常</h3>
+            <div class="album-meta-en">Day by Day</div>
+            <div class="album-quick-info">
+              <div><span class="info-label">發行日期</span><span class="info-val">2016.07.13</span></div>
+              <div><span class="info-label">發行廠牌</span><span class="info-val">華研國際音樂</span></div>
+              <div><span class="info-label">核心音樂風格</span><span class="info-val">Indie-Pop / Chillout / Synth-Pop</span></div>
+            </div>
+            <p style="font-size:0.95rem; color:var(--text-muted);">
+              擁抱生活的平凡與無常，用輕鬆、輕鬆的音符詮釋「把無常當日常」的生命哲理。實體專輯採用特殊手工凝結工藝。
+            </p>
+          </div>
+        </div>
+
+        <div class="view-toggle-bar">
+          <button class="toggle-btn active" onclick="switchView('alb-4', 'official')">官方企劃概念</button>
+          <button class="toggle-btn" onclick="switchView('alb-4', 'critic')">專業樂評觀點</button>
+        </div>
+
+        <div id="alb-4-official" class="perspective-content active">
+          <p><strong>官方概念：</strong>「人生無常，珍惜日常。」遠赴斯洛伐克與新銳攝影師 Mária Švarbová 合作，色彩明亮濃郁，表達在日常瑣碎中發現美的眼光。</p>
+        </div>
+
+        <div id="alb-4-critic" class="perspective-content">
+          <div class="critic-analysis-grid">
+            <div class="analysis-card">
+              <h5>Music Aesthetic</h5>
+              <p>音樂曲風大幅鬆綁，引進輕快節奏、電子擬真音色與鬆弛的藍調民謠（如〈日常〉、〈人間煙火〉），展現極高的生活感。</p>
+            </div>
+            <div class="analysis-card">
+              <h5>Vocal Transformation</h5>
+              <p>歌者摒棄了早期較為壓迫的發聲方式，轉而使用大量氣音與隨性的語氣，聲音極具療癒感與呼吸感。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gma-box">
+          <div class="gma-title">第 28 屆金曲獎紀錄</div>
+          <ul class="gma-list">
+            <li><span class="gma-tag">獲獎</span> 最佳單曲製作人獎：陳珊妮〈人間煙火〉</li>
+            <li><span class="gma-tag">入圍</span> 最佳裝幀設計獎：陳星翰《日常》</li>
+          </ul>
+        </div>
+
+        <div class="tracklist-wrapper">
+          <button class="tracklist-toggle" onclick="toggleTracklist('alb-4-tracks')">
+            <b>完整曲目 Tracklist (10 首)</b>
+            <span id="alb-4-tracks-status">點擊展開 ▼</span>
+          </button>
+          <div id="alb-4-tracks" class="track-grid" style="display:none;">
+            <div class="track-item"><span class="track-num">01</span> 日常</div>
+            <div class="track-item"><span class="track-num">02</span> 人間煙火 <span class="track-key">主打</span></div>
+            <div class="track-item"><span class="track-num">03</span> 餘波蕩漾</div>
+            <div class="track-item"><span class="track-num">04</span> 念念有詞</div>
+            <div class="track-item"><span class="track-num">05</span> 靈魂伴侶 <span class="track-key">熱門</span></div>
+            <div class="track-item"><span class="track-num">06</span> 慢靈魂</div>
+            <div class="track-item"><span class="track-num">07</span> 身體都知道</div>
+            <div class="track-item"><span class="track-num">08</span> 念念不忘</div>
+            <div class="track-item"><span class="track-num">09</span> 什麼，什麼</div>
+            <div class="track-item"><span class="track-num">10</span> 獨善其身</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ALBUM 05 -->
+      <article id="alb-5" class="album-card reveal-on-scroll" data-theme="theme-alb-5">
+        <div class="album-header-grid">
+          <div class="album-cover-wrapper">
+            <img class="album-cover-img" src="https://upload.wikimedia.org/wikipedia/zh/f/f6/Time_Will_Tell_Hebe.jpg" alt="無人知曉 專輯封面" loading="lazy">
+          </div>
+          <div>
+            <span class="album-meta-num">05 / FIFTH ALBUM</span>
+            <h3 class="album-meta-title">無人知曉</h3>
+            <div class="album-meta-en">Time Will Tell</div>
+            <div class="album-quick-info">
+              <div><span class="info-label">發行日期</span><span class="info-val">2020.09.25</span></div>
+              <div><span class="info-label">發行廠牌</span><span class="info-val">何樂音樂 / 樂來樂好</span></div>
+              <div><span class="info-label">核心音樂風格</span><span class="info-val">Art-Pop / Alternative Ballad</span></div>
+            </div>
+            <p style="font-size:0.95rem; color:var(--text-muted);">
+              個人生涯里程碑之作。由陳建騏統籌製作，葛大為詞作統籌，將內心無人知曉的情感角落完全敞開，音樂層次臻至巔峰。
+            </p>
+          </div>
+        </div>
+
+        <div class="view-toggle-bar">
+          <button class="toggle-btn active" onclick="switchView('alb-5', 'official')">官方企劃概念</button>
+          <button class="toggle-btn" onclick="switchView('alb-5', 'critic')">專業樂評觀點</button>
+        </div>
+
+        <div id="alb-5-official" class="perspective-content active">
+          <p><strong>官方概念：</strong>「無人知曉的，就讓時間去說明。」揭露人性中不夠完美、執念、酸楚的一面。視覺遠赴美國俄勒岡州自然景觀拍攝。</p>
+        </div>
+
+        <div id="alb-5-critic" class="perspective-content">
+          <div class="critic-analysis-grid">
+            <div class="analysis-card">
+              <h5>Production Masterclass</h5>
+              <p>陳建騏以高度有機的聲響打造整張專輯，deca joins 合作的〈或是一首歌〉與火星電台合作的〈底里歇斯〉賦予音樂極高當代質感。</p>
+            </div>
+            <div class="analysis-card">
+              <h5>Vocal Expression</h5>
+              <p>歌唱表現被金曲評審譽為「純熟精準、情感自然流露」，展現了天后等級的控制力與真摯感染力。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gma-box">
+          <div class="gma-title">第 32 屆金曲獎紀錄（榮獲 3 項大獎，7 項入圍）</div>
+          <ul class="gma-list">
+            <li><span class="gma-tag">獲獎</span> 最佳華語女歌手獎：田馥甄</li>
+            <li><span class="gma-tag">獲獎</span> 最佳專輯製作人獎：陳建騏《無人知曉》</li>
+            <li><span class="gma-tag">獲獎</span> 最佳作詞人獎：葛大為〈無人知曉〉</li>
+            <li><span class="gma-tag">入圍</span> 年度專輯獎、最佳華語專輯獎、最佳MV獎（陳奕仁〈一一〉）、最佳裝幀設計獎（劉悅德）</li>
+          </ul>
+        </div>
+
+        <div class="tracklist-wrapper">
+          <button class="tracklist-toggle" onclick="toggleTracklist('alb-5-tracks')">
+            <b>完整曲目 Tracklist (11 首)</b>
+            <span id="alb-5-tracks-status">點擊展開 ▼</span>
+          </button>
+          <div id="alb-5-tracks" class="track-grid" style="display:none;">
+            <div class="track-item"><span class="track-num">01</span> Intro</div>
+            <div class="track-item"><span class="track-num">02</span> 先知</div>
+            <div class="track-item"><span class="track-num">03</span> 田</div>
+            <div class="track-item"><span class="track-num">04</span> 底里歇斯</div>
+            <div class="track-item"><span class="track-num">05</span> 一一 <span class="track-key">核心</span></div>
+            <div class="track-item"><span class="track-num">06</span> 皆可</div>
+            <div class="track-item"><span class="track-num">07</span> 無人知曉 <span class="track-key">金曲</span></div>
+            <div class="track-item"><span class="track-num">08</span> 諷刺的情書</div>
+            <div class="track-item"><span class="track-num">09</span> 人什麼的最麻煩了</div>
+            <div class="track-item"><span class="track-num">10</span> 懸日</div>
+            <div class="track-item"><span class="track-num">11</span> 或是一首歌</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ALBUM 06 -->
+      <article id="alb-6" class="album-card reveal-on-scroll" data-theme="theme-alb-6">
+        <div class="album-header-grid">
+          <div class="album-cover-wrapper">
+            <img class="album-cover-img" src="https://upload.wikimedia.org/wikipedia/zh/1/11/The_Land_of_Maybe.jpg" alt="要去什麼地方 專輯封面" loading="lazy">
+          </div>
+          <div>
+            <span class="album-meta-num">06 / SIXTH ALBUM</span>
+            <h3 class="album-meta-title">要去什麼地方</h3>
+            <div class="album-meta-en">The Land of Maybe</div>
+            <div class="album-quick-info">
+              <div><span class="info-label">發行日期</span><span class="info-val">2026.09.24</span></div>
+              <div><span class="info-label">發行廠牌</span><span class="info-val">何樂音樂 / 樂來樂好</span></div>
+              <div><span class="info-label">核心音樂風格</span><span class="info-val">Organic Folk / Environmental Soundscape</span></div>
+            </div>
+            <p style="font-size:0.95rem; color:var(--text-muted);">
+              睽違六年全新大作。遠赴北歐法羅群島取景，回歸最純粹的聲響，探討生命的去向與未知的壯麗。
+            </p>
+          </div>
+        </div>
+
+        <div class="view-toggle-bar">
+          <button class="toggle-btn active" onclick="switchView('alb-6', 'official')">官方企劃概念</button>
+          <button class="toggle-btn" onclick="switchView('alb-6', 'critic')">專業樂評觀點</button>
+        </div>
+
+        <div id="alb-6-official" class="perspective-content active">
+          <p><strong>官方概念：</strong>「不設定終點，目的地即是當下。」捨棄天后級華麗包裝，以極簡、自然的視角迎向未知的靈魂地圖。</p>
+        </div>
+
+        <div id="alb-6-critic" class="perspective-content">
+          <div class="critic-analysis-grid">
+            <div class="analysis-card">
+              <h5>Acoustic & Field Recording</h5>
+              <p>大量融入環境野音與自然原聲樂器，將《Live in Life》田調的精神提煉並融為錄音室專輯的靈魂。</p>
+            </div>
+            <div class="analysis-card">
+              <h5>Artistic Maturity</h5>
+              <p>田馥甄的歌聲展現出空前的鬆弛與豁達，不刻意炫技，字字句句皆是生命的沉澱。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tracklist-wrapper">
+          <button class="tracklist-toggle" onclick="toggleTracklist('alb-6-tracks')">
+            <b>完整曲目 Tracklist (10 首)</b>
+            <span id="alb-6-tracks-status">點擊展開 ▼</span>
+          </button>
+          <div id="alb-6-tracks" class="track-grid" style="display:none;">
+            <div class="track-item"><span class="track-num">01</span> 大船</div>
+            <div class="track-item"><span class="track-num">02</span> 要去什麼地方 <span class="track-key">主打</span></div>
+            <div class="track-item"><span class="track-num">03</span> 雲</div>
+            <div class="track-item"><span class="track-num">04</span> 乾淨的房間</div>
+            <div class="track-item"><span class="track-num">05</span> 值得紀念的垃圾</div>
+            <div class="track-item"><span class="track-num">06</span> 烏鴉</div>
+            <div class="track-item"><span class="track-num">07</span> 蹉跎</div>
+            <div class="track-item"><span class="track-num">08</span> 坍塌</div>
+            <div class="track-item"><span class="track-num">09</span> 靜脈</div>
+            <div class="track-item"><span class="track-num">10</span> 果</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: SINGLES / LIVE IN LIFE -->
+  <section id="singles" class="section-padding">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="en-sub">CONCEPTUAL SINGLES</span>
+        <h2>Singles & Live in Life｜獨立單曲實驗脈絡</h2>
+        <p style="color:var(--text-muted); max-width:700px; margin:0.5rem auto 0 auto;">區隔商業影視 OST，這是田馥甄專注於「現場實地錄音 (Live Recording)」與環境對話的獨立作品實踐。</p>
+      </div>
+
+      <div class="singles-grid">
+        <div class="single-card reveal-on-scroll">
+          <span class="single-year">2018.08</span>
+          <h3 class="single-title">〈自己的房間〉</h3>
+          <p class="badge">Live Recording</p>
+          <p>錄音室現場實況單曲。打破傳統錄音室隔音牆，將日常空間的環境音與樂器同時收錄，開啟聲音場域實錄的探索。</p>
+        </div>
+
+        <div class="single-card reveal-on-scroll">
+          <span class="single-year">2022.02</span>
+          <h3 class="single-title">〈現在是什麼時辰了〉</h3>
+          <p class="badge">Live in Life 系列</p>
+          <p>走入野外山林，與自然生靈的聲音交織。將空氣流動、鳥鳴與歌聲同步紀錄，讓音樂回歸最原始的當下體驗。</p>
+        </div>
+
+        <div class="single-card reveal-on-scroll">
+          <span class="single-year">2023.08</span>
+          <h3 class="single-title">〈乘著無人光影的遠行〉</h3>
+          <p class="badge">獨立單曲</p>
+          <p>長達六分鐘的宏大篇章，陳建騏製作、莊鵑瑛（小球）詞曲創作。探索孤獨、光影與遠行的生命哲思。</p>
+        </div>
+
+        <div class="single-card reveal-on-scroll">
+          <span class="single-year">2024.11</span>
+          <h3 class="single-title">〈一二三〉</h3>
+          <p class="badge">Live Recording / 實地錄音</p>
+          <p>延續現場收音概念，以極簡的編制捕捉時間遞進與自我凝視的平靜力量。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: LIVE TOURS -->
+  <section id="tours" class="section-padding" style="background: rgba(0,0,0,0.2);">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="en-sub">STAGE CONCEPT</span>
+        <h2>Live｜三次大型巡迴演唱會的演變</h2>
+      </div>
+
+      <div class="tours-container">
+        <div class="tour-box reveal-on-scroll">
+          <div class="tour-meta">
+            <h3>如果 IF / IF PLUS</h3>
+            <p class="tour-period">2014 - 2017</p>
+            <span class="badge">體育館大型巡演</span>
+          </div>
+          <div>
+            <p><strong>核心概念：</strong>「如果，你遇到田馥甄，會發生什麼事？」</p>
+            <p>以探索生命中的可能性（Ifs）為題，結合高科技冰山舞台與極致燈光美學。從《To Hebe》至《日常》時期作品於現場展現出極強的流行音樂能量與個人魅力。</p>
+          </div>
+        </div>
+
+        <div class="tour-box reveal-on-scroll">
+          <div class="tour-meta">
+            <h3>一一巡迴演唱會</h3>
+            <p class="tour-period">2020 - 2023</p>
+            <span class="badge">金曲時期旗艦企劃</span>
+          </div>
+          <div>
+            <p><strong>核心概念：</strong>「把個體解構為『一』，再重新相聚為『一一』。」</p>
+            <p>與第五張專輯《無人知曉》相扣。台北小巨蛋、高雄巨蛋連續開唱，舞台美術簡約且極具當代藝術質感，將聲音、字句與時間融合為大型聲音儀式。</p>
+          </div>
+        </div>
+
+        <div class="tour-box reveal-on-scroll">
+          <div class="tour-meta">
+            <h3>要去什麼地方巡迴演唱會</h3>
+            <p class="tour-period">2026</p>
+            <span class="badge">最新全新巡演</span>
+          </div>
+          <div>
+            <p><strong>核心概念：</strong>「目的地不重要，重要的是我們同在路上。」</p>
+            <p>搭配第六張專輯《要去什麼地方》，呈現更高自由度、低干擾的舞台美學，將自然氣息與宏大場域完美結合。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: FIELDWORK (田調) -->
+  <section id="fieldwork" class="section-padding">
+    <div class="container">
+      <div class="fieldwork-feature reveal-on-scroll">
+        <div class="section-header" style="text-align:left; margin-bottom:2rem;">
+          <span class="en-sub" style="color:var(--accent-sage);">SPECIAL CONCEPT</span>
+          <h2 style="font-size:2.4rem;">田調 Live in Life 野地小巡演</h2>
+        </div>
+
+        <div class="fieldwork-grid">
+          <div>
+            <p style="font-size:1.05rem; line-height:1.9;">
+              「田調」不是一般的演唱會，而是一場<strong>歌手走入自然、與土地與現場環境即興對話</strong>的聲音實驗。
+            </p>
+            <p>
+              命名雙關「田馥甄的實地調查」與「走入田野」。地點選在台南北門井仔腳瓦盤鹽田、南投埔里高原等自然環境。無大型螢幕遮擋、沒有繁複燈光特效，觀眾與樂手腳踏土地，感受風聲、鹽香與歌聲交織。
+            </p>
+          </div>
+
+          <div>
+            <blockquote class="quote-box">
+              「在自然面前，歌者與聽眾都是平等的微塵。走進野地，是為了聽見音樂在室內錄音室裡聽不到的自由呼吸。」
+              <footer style="margin-top:0.8rem; font-size:0.85rem; color:var(--accent-sage);">—— 田馥甄關於《田調》的精神自述</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: WHERE SHOULD I START GUIDE -->
+  <section id="guide" class="section-padding" style="background: rgba(0,0,0,0.3);">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="en-sub">LISTENING GUIDE</span>
+        <h2>Where Should I Start? 聆聽入口指南</h2>
+        <p style="color:var(--text-muted);">選擇符合你平時聆聽習慣的標籤，找到最適合你的第一張田馥甄專輯：</p>
+      </div>
+
+      <div class="starter-quiz-grid">
+        <div class="starter-card reveal-on-scroll" onclick="scrollToAlbum('alb-5')">
+          <span class="starter-icon">🖋️</span>
+          <div class="starter-pref">我極度看重歌詞文本與情緒深度</div>
+          <p style="font-size:0.88rem; color:var(--text-muted);">渴望聽見極致優美且直擊靈魂的文字刻畫。</p>
+          <div class="starter-rec">推薦首聽：《無人知曉》 (2020)</div>
+        </div>
+
+        <div class="starter-card reveal-on-scroll" onclick="scrollToAlbum('alb-2')">
+          <span class="starter-icon">🎻</span>
+          <div class="starter-pref">我喜歡宏大編曲與精緻管弦樂</div>
+          <p style="font-size:0.88rem; color:var(--text-muted);">偏好劇院般大氣、情感豐沛的大寫抒情曲。</p>
+          <div class="starter-rec">推薦首聽：《My Love》 (2011)</div>
+        </div>
+
+        <div class="starter-card reveal-on-scroll" onclick="scrollToAlbum('alb-4')">
+          <span class="starter-icon">🌿</span>
+          <div class="starter-pref">我喜歡 Chillout、輕鬆輕快的風格</div>
+          <p style="font-size:0.88rem; color:var(--text-muted);">適合下午茶、通勤、不需要沉重負擔的抒壓聽感。</p>
+          <div class="starter-rec">推薦首聽：《日常》 (2016)</div>
+        </div>
+
+        <div class="starter-card reveal-on-scroll" onclick="scrollToAlbum('alb-6')">
+          <span class="starter-icon">🌌</span>
+          <div class="starter-pref">我喜歡實驗民謠與有機自然聲景</div>
+          <p style="font-size:0.88rem; color:var(--text-muted);">想感受歌手最鬆弛、純粹且與天地對話的聲響。</p>
+          <div class="starter-rec">推薦首聽：《要去什麼地方》 (2026)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>田馥甄 Hebe Tien 個人音樂作品互動策展展覽</p>
+      <p style="margin-top:0.5rem; font-size:0.75rem; color:#666;">
+        官方資料查證來源：樂來樂好有限公司 / 何樂音樂 / 華研國際音樂 / 金曲獎官方資料庫<br>
+        本網站為獨立音樂策展性質之作品展示，僅供音樂學習與學術欣賞使用。
+      </p>
+    </div>
+  </footer>
+
+  <!-- ALL JAVASCRIPT -->
+  <script>
+    /* ==========================================================================
+       INTERACTION & ANIMATION CONTROLLER
+       ========================================================================== */
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initScrollReveal();
+      initThemeObserver();
+      initNavHighlighting();
+    });
+
+    /* 1. Scroll Reveal Animation */
+    function initScrollReveal() {
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(el => observer.observe(el));
+    }
+
+    /* 2. Album Theme Switching on Scroll */
+    function initThemeObserver() {
+      const albumCards = document.querySelectorAll('.album-card');
+      
+      const themeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const themeClass = entry.target.getAttribute('data-theme');
+            document.body.className = themeClass;
+
+            // Sync menu highlighting
+            const albId = entry.target.id;
+            document.querySelectorAll('.disc-nav-item').forEach(nav => {
+              if (nav.getAttribute('href') === '#' + albId) {
+                nav.classList.add('active');
+              } else {
+                nav.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, {
+        threshold: 0.4
+      });
+
+      albumCards.forEach(card => themeObserver.observe(card));
+    }
+
+    /* 3. Navigation Highlight on Scroll */
+    function initNavHighlighting() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('nav.nav-links a');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    }
+
+    /* 4. Official Concept vs Critic's View Switcher */
+    function switchView(albumId, viewType) {
+      const card = document.getElementById(albumId);
+      const buttons = card.querySelectorAll('.toggle-btn');
+      const officialBox = document.getElementById(albumId + '-official');
+      const criticBox = document.getElementById(albumId + '-critic');
+
+      if (viewType === 'official') {
+        buttons[0].classList.add('active');
+        buttons[1].classList.remove('active');
+        officialBox.classList.add('active');
+        criticBox.classList.remove('active');
+      } else {
+        buttons[1].classList.add('active');
+        buttons[0].classList.remove('active');
+        criticBox.classList.add('active');
+        officialBox.classList.remove('active');
+      }
+    }
+
+    /* 5. Tracklist Accordion Toggle */
+    function toggleTracklist(tracklistId) {
+      const trackGrid = document.getElementById(tracklistId);
+      const statusSpan = document.getElementById(tracklistId + '-status');
+
+      if (trackGrid.style.display === 'none' || trackGrid.style.display === '') {
+        trackGrid.style.display = 'grid';
+        statusSpan.textContent = '點擊收合 ▲';
+      } else {
+        trackGrid.style.display = 'none';
+        statusSpan.textContent = '點擊展開 ▼';
+      }
+    }
+
+    /* 6. Starter Guide Scroll Helper */
+    function scrollToAlbum(albumId) {
+      const target = document.getElementById(albumId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+</body>
+</html>

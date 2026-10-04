@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>田馥甄 Hebe Tien｜音樂作品互動策展與導覽</title>
+  <meta name="description" content="從一首歌開始，走進田馥甄的六張專輯。音樂策展 × 作品導覽 × 專業樂評 × 視覺敘事。">
+  <meta property="og:title" content="田馥甄 Hebe Tien｜音樂作品互動策展與導覽">
+  <meta property="og:description" content="探索田馥甄六張個人錄音室專輯、Live in Life 單曲脈絡與大型巡演的音樂進化之路。">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+TC:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f1115;
+      --bg-card: #161920;
+      --bg-light: #f4f3ef;
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-dark: #1e293b;
+      --accent-gold: #d4af37;
+      --accent-warm: #c87d55;
+      --accent-moss: #5f7461;
+      --accent-mist: #829ab1;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --font-serif: 'Noto Serif TC', serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-display: 'Cinzel', serif;
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, .serif-font {
+      font-family: var(--font-serif);
+      font-weight: 400;
+    }
+
+    .display-font {
+      font-family: var(--font-display);
+      letter-spacing: 0.1em;
+    }
+
+    /* Navigation */
+    .nav-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(15, 17, 21, 0.9), rgba(15, 17, 21, 0));
+      backdrop-filter: blur(8px);
+      transition: var(--transition);
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-gold);
+    }
+
+    /* Section Structure */
+    section {
+      position: relative;
+      padding: 8rem 2rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .section-title-wrapper {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      color: var(--accent-gold);
+      letter-spacing: 0.25em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: #fff;
+      font-weight: 300;
+    }
+
+    /* Badge Tags */
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .badge-fact { background: rgba(212, 175, 55, 0.15); color: var(--accent-gold); border: 1px solid rgba(212, 175, 55, 0.3); }
+    .badge-statement { background: rgba(95, 116, 97, 0.2); color: #a3c9a8; border: 1px solid rgba(95, 116, 97, 0.4); }
+    .badge-critic { background: rgba(200, 125, 85, 0.2); color: #e8a582; border: 1px solid rgba(200, 125, 85, 0.4); }
+
+    /* Hero Section */
+    #hero {
+      height: 100vh;
+      max-width: 100%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(180deg, rgba(15, 17, 21, 0.4) 0%, rgba(15, 17, 21, 0.85) 100%),
+                  url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+      filter: grayscale(20%) brightness(0.7);
+      transform: scale(1.05);
+      transition: transform 10s ease-out;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+      padding: 0 2rem;
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-size: 0.875rem;
+      letter-spacing: 0.2em;
+      transition: var(--transition);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .hero-btn:hover {
+      background: var(--accent-gold);
+      color: var(--bg-dark);
+    }
+
+    /* About Section */
+    #about {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 2rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.35rem;
+      top: 0.35rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+    }
+
+    .timeline-year {
+      font-family: var(--font-display);
+      color: var(--accent-gold);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-desc {
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+
+    /* Discography Main Chapter */
+    .album-chapter {
+      margin-bottom: 12rem;
+      scroll-margin-top: 6rem;
+    }
+
+    .album-hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-bottom: 4rem;
+    }
+
+    .album-hero-grid.reverse {
+      grid-template-columns: 1fr 1.2fr;
+    }
+
+    .album-cover-container {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .album-cover-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s var(--transition);
+    }
+
+    .album-cover-container:hover img {
+      transform: scale(1.03);
+    }
+
+    .album-identity {
+      padding: 1rem 0;
+    }
+
+    .album-number {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      color: var(--accent-gold);
+      letter-spacing: 0.2em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .album-title-main {
+      font-size: 3rem;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+
+    .album-title-sub {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .album-meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .album-meta-table td {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .album-meta-table td:first-child {
+      color: var(--text-muted);
+      width: 35%;
+    }
+
+    /* Album Tabs System */
+    .album-nav-tabs {
+      display: flex;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 2.5rem;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.75rem 1.25rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-family: var(--font-serif);
+      transition: var(--transition);
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      color: #fff;
+    }
+
+    .tab-btn.active {
+      color: var(--accent-gold);
+      border-bottom-color: var(--accent-gold);
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content-box {
+      background: var(--bg-card);
+      padding: 2.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+    }
+
+    .content-box p {
+      margin-bottom: 1.2rem;
+      color: var(--text-main);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* Tracklist Accordion */
+    .tracklist-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .track-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .track-header {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .track-title {
+      font-size: 1.05rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .track-num {
+      font-family: var(--font-display);
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      min-width: 2rem;
+    }
+
+    .track-body {
+      padding: 0 1.5rem 1.25rem 4.5rem;
+      display: none;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      border-top: 1px dashed rgba(255,255,255,0.05);
+      margin-top: 0.5rem;
+      padding-top: 1rem;
+    }
+
+    .track-item.open .track-body {
+      display: block;
+    }
+
+    /* Evolution Section */
+    #evolution {
+      background: #13161c;
+      border-radius: 12px;
+      padding: 5rem 3rem;
+      margin: 6rem auto;
+      border: 1px solid var(--border-color);
+    }
+
+    .evolution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .evolution-card {
+      background: var(--bg-card);
+      padding: 2rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-gold);
+    }
+
+    .evolution-card h4 {
+      color: #fff;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .evolution-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Live & Tian Diao */
+    .live-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .live-card {
+      background: var(--bg-card);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .live-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .live-content {
+      padding: 2rem;
+      flex-grow: 1;
+    }
+
+    .live-title {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .live-subtitle {
+      font-size: 0.85rem;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .live-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Start Guide Quiz */
+    #guide {
+      background: linear-gradient(135deg, #181c24 0%, #0f1115 100%);
+      border-radius: 16px;
+      padding: 5rem 3rem;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .quiz-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .quiz-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 8px;
+      color: var(--text-main);
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .quiz-btn:hover, .quiz-btn.selected {
+      border-color: var(--accent-gold);
+      background: rgba(212, 175, 55, 0.08);
+      color: #fff;
+    }
+
+    .recommendation-result {
+      display: none;
+      margin-top: 3rem;
+      padding: 2.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      border-left: 4px solid var(--accent-gold);
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nav-header { padding: 1rem 1.5rem; }
+      .nav-links { display: none; } /* Mobile Menu fallback simplifies for layout */
+      section { padding: 5rem 1.5rem; }
+      .about-grid, .album-hero-grid, .album-hero-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .album-title-main { font-size: 2.25rem; }
+      .content-box { padding: 1.5rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav-header">
+    <a href="#hero" class="nav-brand">HEBE TIEN</a>
+    <ul class="nav-links">
+      <li><a href="#about">關於</a></li>
+      <li><a href="#discography">專輯作品</a></li>
+      <li><a href="#evolution">音樂演變</a></li>
+      <li><a href="#singles">單曲脈絡</a></li>
+      <li><a href="#live">現場巡演</a></li>
+      <li><a href="#tian-diao">田調系列</a></li>
+      <li><a href="#guide">新手導覽</a></li>
+    </ul>
+  </nav>
+
+  <!-- 1. Hero Section -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="section-subtitle">2010 — PRESENT</span>
+      <h1 class="hero-title">從一首歌開始<br>走進田馥甄的六張作品</h1>
+      <p class="hero-subtitle">探索從華語天團頂峰，走入自我獨白、土地共振與生命未知的音樂策展旅程。</p>
+      <a href="#discography" class="hero-btn">探索專輯 Discography</a>
+    </div>
+  </section>
+
+  <!-- 2. About Hebe Section -->
+  <section id="about">
+    <div class="section-title-wrapper">
+      <span class="section-subtitle">ARTIST PROFILE</span>
+      <h2 class="section-title">關於田馥甄 Hebe Tien</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="badge badge-fact">Official Fact</span>
+        <p>田馥甄（Hebe Tien），臺灣知名女歌手。2001 年作為華語女子天團 S.H.E 成員正式出道，風靡華語樂壇近十年。2010 年，她以本名「田馥甄」推出首張個人專輯《To Hebe》，成功從團體成員開創出獨樹一幟的個人音樂美學品牌。</p>
+        
+        <span class="badge badge-critic">Critical Context</span>
+        <p>在開始聆聽她的六張錄音室專輯前，使用者需要理解：田馥甄的個人生涯並非單純的「偶像轉型」，而是一場長時間、極具自省意識的「聲響與自我探索實驗」。她的作品介於大眾流行與獨立獨立音樂風格之間，將冷冽文青氣質與深情流行旋律完美結合。</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2001 — 2009</div>
+          <div class="timeline-desc">S.H.E 成員時期，累積華語頂尖流行演唱經驗與強大演唱實力。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2010 — 2017</div>
+          <div class="timeline-desc">加盟華研國際，相繼發行《To Hebe》《My Love》《渺小》《日常》四張作品，確立個人美學定位。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2018 — 2019</div>
+          <div class="timeline-desc">約滿成立個人經紀公司「樂來樂好」，音樂作品結盟「何樂音樂」，邁入自主策劃新階段。</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2020 — 2026</div>
+          <div class="timeline-desc">發行《無人知曉》（獲第 32 屆金曲獎最佳華語女歌手）及第六張專輯《要去什麼地方》，展開自然與生命深處的探索。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Discography Section -->
+  <section id="discography">
+    <div class="section-title-wrapper">
+      <span class="section-subtitle">DISCOGRAPHY</span>
+      <h2 class="section-title">六張個人錄音室專輯</h2>
+      <p style="color:var(--text-muted); margin-top:0.5rem;">音樂策展 × 官方概念 × 樂評分析 × 完整曲序</p>
+    </div>
+
+    <!-- Album 01 -->
+    <article id="album-01" class="album-chapter">
+      <div class="album-hero-grid">
+        <div class="album-cover-container">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop" alt="To Hebe 專輯封面風格意像">
+        </div>
+        <div class="album-identity">
+          <span class="album-number">ALBUM 01 / 06</span>
+          <h3 class="album-title-main">To Hebe</h3>
+          <div class="album-title-sub">給自己</div>
+          
+          <table class="album-meta-table">
+            <tr><td>發行日期</td><td>2010 年 09 月 03 日</td></tr>
+            <tr><td>發行／製作</td><td>華研國際音樂 (HIM)</td></tr>
+            <tr><td>風格標籤</td><td>Pop Rock / Alternative Pop / Acoustic</td></tr>
+            <tr><td>核心主題</td><td>自我對話、愛與愛自己、獨立宣言</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="album-nav-tabs">
+        <button class="tab-btn active" onclick="switchTab(this, 'a1-concept')">官方概念 Official Concept</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a1-sound')">音樂與製作 Sound & Production</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a1-lyrics')">歌詞與主題 Lyrics & Themes</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a1-tracklist')">完整曲序 Tracklist</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a1-start')">新手入口 Start Here</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a1-critic')">樂評觀點 Critic's View</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a1-awards')">獎項紀錄 Awards</button>
+      </div>
+
+      <div id="a1-concept" class="tab-content active">
+        <div class="content-box">
+          <span class="badge badge-fact">Official Fact</span>
+          <span class="badge badge-statement">Artist Statement</span>
+          <p>作為從 S.H.E 獨立發聲的首張個人專輯，《To Hebe》並非切斷過往，而是一次深刻的自我審視。官方以「給自己」為心靈出發點，這張專輯是田馥甄三十歲前對自身感情、思想、生命價值的對話紀錄。</p>
+          <p>專輯核心概念圍繞著「愛」的不同面向：愛自己、愛他人、愛世界。透過田馥甄輕盈卻富有韌性的嗓音，將這封寫給自己的音樂信件寄向廣大的聽眾。</p>
+        </div>
+      </div>
+
+      <div id="a1-sound" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-critic">Critical Context</span>
+          <p><strong>Sound Analysis:</strong> 製作團隊（由王治平、陳珊妮、袁惟仁、郭文宗等操刀）為田馥甄打造了兼具流行感染力與獨立質感的聲響架構。相較於 S.H.E 時期的豐富和聲與熱烈情感，這張專輯大量使用了英式搖滾（Britpop）、Acoustic 吉他、爵士微韻與輕度電音。</p>
+          <p><strong>Vocal Performance:</strong> 展現了田馥甄清澈、具空氣感卻紮實的音色，特別是在真假音轉換與空靈高音的處理上，標誌著她個人風格的建立。</p>
+        </div>
+      </div>
+
+      <div id="a1-lyrics" class="tab-content">
+        <div class="content-box">
+          <p>歌詞創作匯聚了陳小霞、施人誠、陳珊妮、林夕等華語頂尖詞曲創作者。主題從〈To Hebe〉中對大自然與人類未來的宏觀關懷，延伸至〈寂寞寂寞就好〉對失戀個體的強韌自主，文字視角擺脫了傳統流行女聲的被動妥協，展現出清醒、獨立且略帶冷靜的女性視角。</p>
+        </div>
+      </div>
+
+      <div id="a1-tracklist" class="tab-content">
+        <div class="tracklist-container">
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">01</span> Love?</div><span>0:58</span></div>
+            <div class="track-body">Opening 首曲，以簡短潔淨的吉他彈唱為整張專輯拉開純粹的序幕。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">02</span> To Hebe</div><span>3:58</span></div>
+            <div class="track-body">Why it matters: 陳珊妮詞曲，同名核心主題曲，宣告個人音樂視野不局限於小愛。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">03</span> 離島</div><span>3:47</span></div>
+            <div class="track-body">著名疏離感力作，以離島比喻個人社交距離，極具文青標誌性。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">04</span> 寂寞寂寞就好</div><span>4:38</span></div>
+            <div class="track-body">Why it matters: 搖滾曲風神曲，奠定其個人傳唱度與強大市場基礎。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">05</span> 麥田捕手</div><span>4:22</span></div>
+            <div class="track-body">輕快輕盈的旋律，充滿文學意象的編曲設計。</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="a1-start" class="tab-content">
+        <div class="content-box">
+          <p><strong>入門推薦：</strong></p>
+          <ul style="padding-left:1.5rem; color:var(--text-muted);">
+            <li><strong>〈寂寞寂寞就好〉：</strong> 最快建立對田馥甄個人搖滾爆發力與獨立情感態度的歌曲。</li>
+            <li><strong>〈離島〉：</strong> 理解她聲音中「疏離、冷靜、保有自我空間」美學的必聽作品。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="a1-critic" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-critic">Critic's View</span>
+          <p>《To Hebe》是華語流行音樂史上非常成功的個人單飛起步作品。它的成功在於「精準的度量」——既沒有過度偏離華語聽眾的審美習慣，又成功去除了團體時期的甜美標籤。限制在於部分歌曲仍帶有些許傳統唱片工業的收歌痕跡，但已足夠震撼市場。</p>
+        </div>
+      </div>
+
+      <div id="a1-awards" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-fact">GMA Information</span>
+          <p><strong>第 22 屆金曲獎入圍紀錄：</strong></p>
+          <ul style="padding-left:1.5rem; color:var(--text-muted);">
+            <li>入圍 最佳國語專輯獎《To Hebe》</li>
+            <li>入圍 最佳音樂錄影帶獎〈寂寞寂寞就好〉（導演：徐筠軒）</li>
+            <li>入圍 最佳單曲製作人獎 王治平〈LOVE!〉</li>
+            <li>入圍 最佳專輯包裝獎 聶永真《To Hebe》</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Album 02 -->
+    <article id="album-02" class="album-chapter">
+      <div class="album-hero-grid reverse">
+        <div class="album-identity">
+          <span class="album-number">ALBUM 02 / 06</span>
+          <h3 class="album-title-main">My Love</h3>
+          <div class="album-title-sub">愛的各種姿態</div>
+          
+          <table class="album-meta-table">
+            <tr><td>發行日期</td><td>2011 年 09 月 02 日</td></tr>
+            <tr><td>發行／製作</td><td>華研國際音樂 (HIM)</td></tr>
+            <tr><td>風格標籤</td><td>Chamber Pop / Classical Pop / Indie Rock</td></tr>
+            <tr><td>核心主題</td><td>大愛、包容、生命的愛與挫折</td></tr>
+          </table>
+        </div>
+        <div class="album-cover-container">
+          <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=800&auto=format&fit=crop" alt="My Love 專輯風格意像">
+        </div>
+      </div>
+
+      <div class="album-nav-tabs">
+        <button class="tab-btn active" onclick="switchTab(this, 'a2-concept')">官方概念 Official Concept</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a2-sound')">音樂與製作 Sound & Production</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a2-tracklist')">完整曲序 Tracklist</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a2-start')">新手入口 Start Here</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a2-critic')">樂評觀點 Critic's View</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a2-awards')">獎項紀錄 Awards</button>
+      </div>
+
+      <div id="a2-concept" class="tab-content active">
+        <div class="content-box">
+          <span class="badge badge-fact">Official Fact</span>
+          <p>延續前作《To Hebe》對「愛」的探索，二號作品《My Love》將視野從「自我」拉廣至「世界與他人」。官方將此專輯定位為更具大愛視野與包容力的力作。田馥甄在此作品中不再只是對自己歌唱，而是向所有遭遇愛與痛的人傳遞共鳴。</p>
+        </div>
+      </div>
+
+      <div id="a2-sound" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-critic">Critical Context</span>
+          <p><strong>Sound & Arrangement:</strong> 大量融入管弦樂（Chamber Pop）與宏大的配器編制。標題曲〈My Love〉以英式搖滾編制加上壯闊的弦樂鋪陳，展現極高規格的流行音樂製作實力；而〈魔鬼中的天使〉則巧妙結合暗黑流行與細緻人聲。</p>
+        </div>
+      </div>
+
+      <div id="a2-tracklist" class="tab-content">
+        <div class="tracklist-container">
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">01</span> 烏托邦</div><span>3:32</span></div>
+            <div class="track-body">優雅的詩意開場，奠定整張專輯典雅的古典流行基調。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">02</span> 要說什麼</div><span>4:00</span></div>
+            <div class="track-body">田馥甄親自填詞，傳達面對媒體與大眾好奇時的內心冷靜抵抗。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">03</span> My Love</div><span>5:10</span></div>
+            <div class="track-body">Why it matters: 壯闊的全輯核心曲，展現張力十足的歌唱實力與大愛信仰。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">04</span> 魔鬼中的天使</div><span>3:58</span></div>
+            <div class="track-body">Why it matters: 傳唱度極高的經典名曲，暗黑情感與張力兼具。</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="a2-start" class="tab-content">
+        <div class="content-box">
+          <p><strong>入門推薦：</strong></p>
+          <ul style="padding-left:1.5rem; color:var(--text-muted);">
+            <li><strong>〈My Love〉：</strong> 體驗田馥甄演繹英式搖滾弦樂史詩大歌的強大氣場。</li>
+            <li><strong>〈魔鬼中的天使〉：</strong> 華語流行旋律與極具識別度嗓音的完美結合點。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="a2-critic" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-critic">Critic's View</span>
+          <p>《My Love》是一張「雄心勃勃」的專輯。音樂製作極其精緻且富企圖心，讓田馥甄在金曲獎獲得高達 7 項入圍的驚人肯定。這張作品徹底將她推向了華語樂壇一線頂尖女歌手的地位。</p>
+        </div>
+      </div>
+
+      <div id="a2-awards" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-fact">GMA Information</span>
+          <p><strong>第 23 屆金曲獎入圍 7 項大獎：</strong></p>
+          <ul style="padding-left:1.5rem; color:var(--text-muted);">
+            <li>入圍 最佳國語女歌手獎 田馥甄</li>
+            <li>入圍 最佳國語專輯獎《My Love》</li>
+            <li>入圍 最佳音樂錄影帶獎〈My Love〉（導演：比爾賈）</li>
+            <li>入圍 最佳作曲人獎 鄭楠〈My Love〉</li>
+            <li>入圍 最佳作詞人獎 李格弟〈請你給我好一點的情敵〉</li>
+            <li>入圍 最佳編曲人獎 梵谷完成〈請你給我好一點的情敵〉</li>
+            <li>入圍 最佳專輯包裝獎 聶永真《My Love》</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Album 03 -->
+    <article id="album-03" class="album-chapter">
+      <div class="album-hero-grid">
+        <div class="album-cover-container">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop" alt="渺小 專輯風格意像">
+        </div>
+        <div class="album-identity">
+          <span class="album-number">ALBUM 03 / 06</span>
+          <h3 class="album-title-main">渺小</h3>
+          <div class="album-title-sub">Insignificance</div>
+          
+          <table class="album-meta-table">
+            <tr><td>發行日期</td><td>2013 年 11 月 29 日</td></tr>
+            <tr><td>發行／製作</td><td>華研國際音樂 (HIM)</td></tr>
+            <tr><td>風格標籤</td><td>Electronic Rock / Electro-pop / Nordic Atmosphere</td></tr>
+            <tr><td>核心主題</td><td>宇宙、自我剖析、存在主義、冷冽冰原</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="album-nav-tabs">
+        <button class="tab-btn active" onclick="switchTab(this, 'a3-concept')">官方概念 Official Concept</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a3-sound')">音樂與製作 Sound & Production</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a3-tracklist')">完整曲序 Tracklist</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a3-start')">新手入口 Start Here</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a3-critic')">樂評觀點 Critic's View</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a3-awards')">獎項紀錄 Awards</button>
+      </div>
+
+      <div id="a3-concept" class="tab-content active">
+        <div class="content-box">
+          <span class="badge badge-fact">Official Fact</span>
+          <p>《渺小》遠赴冰島拍攝視覺，靈感源自波蘭女詩人辛波絲卡（Wisława Szymborska）的詩作《在一顆小沙粒裡》。專輯官方概念聚焦於人類在巨大自然與宇宙面前的微小，以及內心深刻的自省。</p>
+        </div>
+      </div>
+
+      <div id="a3-sound" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-critic">Critical Context</span>
+          <p><strong>Sound Design:</strong> 這是田馥甄音樂美學最「冷冽」且「實驗性」的一步。標題曲〈渺小〉引進了強烈的電子搖滾節奏（Electronic Rock）與冷峻重拍，將冰島的空間感與詩歌朗誦結合，營造出神聖而宏大的哲學氣場。</p>
+        </div>
+      </div>
+
+      <div id="a3-tracklist" class="tab-content">
+        <div class="tracklist-container">
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">01</span> 渺小</div><span>4:44</span></div>
+            <div class="track-body">Why it matters: 全輯視覺與概念核心，冷冽電音搖滾與辛波絲卡詩意結合。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">02</span> 你就不要想起我</div><span>4:40</span></div>
+            <div class="track-body">Why it matters: 情感極致撕裂的流行情歌神曲，與概念曲〈渺小〉形成鮮明冷熱對比。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">03</span> 不醉不會</div><span>3:50</span></div>
+            <div class="track-body">復古電子搖滾，展現微醺自由的哲學人生觀。</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="a3-start" class="tab-content">
+        <div class="content-box">
+          <p><strong>入門推薦：</strong></p>
+          <ul style="padding-left:1.5rem; color:var(--text-muted);">
+            <li><strong>〈你就不要想起我〉：</strong> 華語流行情歌爆發力極致代表作。</li>
+            <li><strong>〈渺小〉：</strong> 體驗田馥甄冷冽哲學風格與高質感電子搖滾製作的經典。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="a3-critic" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-critic">Critic's View</span>
+          <p>《渺小》展現了絕佳的視覺與概念企圖心。專輯在「冰冷嚴謹的哲學概念（渺小）」與「熱烈通俗的流行市場（你就不要想起我）」之間形成了張力十足的雙軌平行，也確立了她能駕馭宏大題材的藝術氣場。</p>
+        </div>
+      </div>
+
+      <div id="a3-awards" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-fact">GMA Information</span>
+          <p><strong>第 25 屆金曲獎入圍紀錄：</strong></p>
+          <ul style="padding-left:1.5rem; color:var(--text-muted);">
+            <li>入圍 最佳音樂錄影帶獎〈渺小〉（導演：比爾賈）</li>
+            <li>入圍 最佳專輯包裝獎 聶永真《渺小》</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Album 04 -->
+    <article id="album-04" class="album-chapter">
+      <div class="album-hero-grid reverse">
+        <div class="album-identity">
+          <span class="album-number">ALBUM 04 / 06</span>
+          <h3 class="album-title-main">日常</h3>
+          <div class="album-title-sub">DAY BY DAY</div>
+          
+          <table class="album-meta-table">
+            <tr><td>發行日期</td><td>2016 年 07 月 13 日</td></tr>
+            <tr><td>發行／製作</td><td>華研國際音樂 (HIM)</td></tr>
+            <tr><td>風格標籤</td><td>Indie Pop / Tropical House / Funk / Soul</td></tr>
+            <tr><td>核心主題</td><td>珍惜當下、生活哲理、日常的無常與美好</td></tr>
+          </table>
+        </div>
+        <div class="album-cover-container">
+          <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=800&auto=format&fit=crop" alt="日常 專輯風格意像">
+        </div>
+      </div>
+
+      <div class="album-nav-tabs">
+        <button class="tab-btn active" onclick="switchTab(this, 'a4-concept')">官方概念 Official Concept</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a4-sound')">音樂與製作 Sound & Production</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a4-tracklist')">完整曲序 Tracklist</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a4-start')">新手入口 Start Here</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a4-critic')">樂評觀點 Critic's View</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a4-awards')">獎項紀錄 Awards</button>
+      </div>
+
+      <div id="a4-concept" class="tab-content active">
+        <div class="content-box">
+          <span class="badge badge-fact">Official Fact</span>
+          <p>在經歷了《渺小》的宏大之後，《日常》將視角徹底拉回生活微觀細節。官方概念強調「人生無常，安心享受日常」。視覺遠赴斯洛伐克拍攝，運用大量鮮豔高飽和色彩，展現輕鬆、隨性卻清醒的生活哲理。</p>
+        </div>
+      </div>
+
+      <div id="a4-sound" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-critic">Critical Context</span>
+          <p><strong>Sound Transformation:</strong> 音樂風格極其輕盈多彩。大量採用流行電子（Tropical House）、輕快 Funk、Soul 與輕爵士，人聲處理減去了過往嚴肅的厚重感，轉為輕盈、微醺且充滿呼吸感的唱腔。</p>
+        </div>
+      </div>
+
+      <div id="a4-tracklist" class="tab-content">
+        <div class="tracklist-container">
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">01</span> 日常</div><span>2:53</span></div>
+            <div class="track-body">輕快的清晨開場，宣告回歸生活的簡單快樂。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">02</span> 人間煙火</div><span>4:06</span></div>
+            <div class="track-body">Why it matters: 輕盈電子舞曲風格，展示無常生活中的雀躍體驗。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">03</span> 餘波盪漾</div><span>4:52</span></div>
+            <div class="track-body">Why it matters: 情感深沉的抒情大歌，細緻描繪逝去愛情在日常中的餘震。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">04</span> 獨善其身</div><span>3:47</span></div>
+            <div class="track-body">靈動優雅的節奏，詮釋「先好好愛自己才能愛人」的處世哲學。</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="a4-start" class="tab-content">
+        <div class="content-box">
+          <p><strong>入門推薦：</strong></p>
+          <ul style="padding-left:1.5rem; color:var(--text-muted);">
+            <li><strong>〈餘波盪漾〉：</strong> 情感深厚且旋律極佳的日常情感代表作。</li>
+            <li><strong>〈獨善其身〉：</strong> 輕盈靈動，最能代表這張專輯鬆弛感的歌曲。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="a4-critic" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-critic">Critic's View</span>
+          <p>《日常》是田馥甄音樂生涯中一次非常舒服且放鬆的轉折。它卸下了《渺小》時期高冷的哲學負擔，以繽紛色彩與輕鬆節奏擁抱聽眾，展現了高水準的流行音樂彩度與生活態度。</p>
+        </div>
+      </div>
+
+      <div id="a4-awards" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-fact">GMA Information</span>
+          <p><strong>第 28 屆金曲獎入圍紀錄：</strong></p>
+          <ul style="padding-left:1.5rem; color:var(--text-muted);">
+            <li>入圍 最佳單曲製作人獎 陳珊妮〈人間煙火〉</li>
+            <li>入圍 最佳專輯裝幀設計獎 陸穎魚《日常》</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Album 05 -->
+    <article id="album-05" class="album-chapter">
+      <div class="album-hero-grid">
+        <div class="album-cover-container">
+          <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=800&auto=format&fit=crop" alt="無人知曉 專輯風格意像">
+        </div>
+        <div class="album-identity">
+          <span class="album-number">ALBUM 05 / 06</span>
+          <h3 class="album-title-main">無人知曉</h3>
+          <div class="album-title-sub">Time Will Tell</div>
+          
+          <table class="album-meta-table">
+            <tr><td>發行日期</td><td>2020 年 09 月 25 日</td></tr>
+            <tr><td>發行／製作</td><td>樂來樂好 / 何樂音樂 (A Music)</td></tr>
+            <tr><td>核心製作</td><td>陳建騏（專輯製作人）、葛大為（歌詞統籌）</td></tr>
+            <tr><td>風格標籤</td><td>Alternative Ballad / Chamber Pop / Synth-Pop</td></tr>
+            <tr><td>核心主題</td><td>情感秘密、時間解藥、自我接納、集體共鳴</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="album-nav-tabs">
+        <button class="tab-btn active" onclick="switchTab(this, 'a5-concept')">官方概念 Official Concept</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a5-sound')">音樂與製作 Sound & Production</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a5-tracklist')">完整曲序 Tracklist</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a5-start')">新手入口 Start Here</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a5-critic')">樂評觀點 Critic's View</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a5-awards')">金曲獎大獲全勝 Awards</button>
+      </div>
+
+      <div id="a5-concept" class="tab-content active">
+        <div class="content-box">
+          <span class="badge badge-fact">Official Fact</span>
+          <p>加盟何樂音樂後的首張全新大碟。官方概念以「時間」為解答，剖析那些無法輕易向外人道的內心秘密與情感傷痛。田馥甄在此作中展現了極高的個人情感主導權，將自身經歷與成熟心境徹底融入音樂。</p>
+        </div>
+      </div>
+
+      <div id="a5-sound" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-critic">Critical Context</span>
+          <p><strong>Masterpiece Production:</strong> 由陳建騏擔綱總製作人，音樂製作達到前所未有的藝術層次。從〈懸日〉的溫暖民謠吉他、〈皆可〉的極簡弦樂，到〈無人知曉〉張力極強的古典Pop與〈或是一首歌〉的 Deca Joins 獨立搖滾抒情，全輯聲響層次極其豐滿且充滿電影感。</p>
+        </div>
+      </div>
+
+      <div id="a5-tracklist" class="tab-content">
+        <div class="tracklist-container">
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">01</span> 懸日</div><span>4:38</span></div>
+            <div class="track-body">Why it matters: 專輯首發單曲，以放下與時間為題，展現溫柔優雅的釋懷。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">02</span> 皆可</div><span>4:18</span></div>
+            <div class="track-body">Why it matters: 展現廣闊孤獨感的代表作，演唱實力達到極高境界。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">03</span> 無人知曉</div><span>4:47</span></div>
+            <div class="track-body">Why it matters: 金曲最佳作詞加持，將情感裡無法公開的酸楚寫至極致。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">04</span> 或是一首歌</div><span>4:33</span></div>
+            <div class="track-body">與獨立樂團 Deca Joins 合作，作為 Outro 帶來無比鬆弛的夢幻感。</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="a5-start" class="tab-content">
+        <div class="content-box">
+          <p><strong>入門推薦：</strong></p>
+          <ul style="padding-left:1.5rem; color:var(--text-muted);">
+            <li><strong>〈無人知曉〉：</strong> 華語流行樂極致情感渲染力之作。</li>
+            <li><strong>〈懸日〉：</strong> 理解田馥甄成熟期平靜、釋懷美學的絕佳門檻。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="a5-critic" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-critic">Critic's View</span>
+          <p>《無人知曉》是田馥甄個人音樂生涯迄今的「巔峰圓滿之作」。它成功將獨立音樂人的創作氣質與主流音樂的深情完美熔於一爐，聲響細膩，情感誠實，無疑是當代華語流行音樂的經典大碟。</p>
+        </div>
+      </div>
+
+      <div id="a5-awards" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-fact">GMA Information</span>
+          <p><strong>第 32 屆金曲獎 7 項大獎提名，並榮獲 3 項大獎：</strong></p>
+          <ul style="padding-left:1.5rem; color:var(--text-muted);">
+            <li><strong style="color:var(--accent-gold);">【獲獎】最佳華語女歌手獎：田馥甄</strong></li>
+            <li><strong style="color:var(--accent-gold);">【獲獎】最佳專輯製作人獎：陳建騏《無人知曉》</strong></li>
+            <li><strong style="color:var(--accent-gold);">【獲獎】最佳作詞人獎：葛大為〈無人知曉〉</strong></li>
+            <li>入圍 最佳華語專輯獎《無人知曉》</li>
+            <li>入圍 年度專輯獎《無人知曉》</li>
+            <li>入圍 最佳音樂錄影帶獎〈一一〉（導演：亞斯達）</li>
+            <li>入圍 最佳裝幀設計獎 劉悅德《無人知曉》</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- Album 06 -->
+    <article id="album-06" class="album-chapter">
+      <div class="album-hero-grid reverse">
+        <div class="album-identity">
+          <span class="album-number">ALBUM 06 / 06</span>
+          <h3 class="album-title-main">要去什麼地方</h3>
+          <div class="album-title-sub">The Land of Maybe</div>
+          
+          <table class="album-meta-table">
+            <tr><td>發行日期</td><td>2026 年 09 月 24 日（數位）/ 12 月（實體）</td></tr>
+            <tr><td>發行／製作</td><td>樂來樂好 / 何樂音樂</td></tr>
+            <tr><td>核心概念</td><td>法羅群島意象、未知旅程、山海天地、生命現階段疑問</td></tr>
+            <tr><td>風格標籤</td><td>Organic Ambient / Landscape Pop / Folk Rock</td></tr>
+          </table>
+        </div>
+        <div class="album-cover-container">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop" alt="要去什麼地方 專輯風格意像">
+        </div>
+      </div>
+
+      <div class="album-nav-tabs">
+        <button class="tab-btn active" onclick="switchTab(this, 'a6-concept')">官方概念 Official Concept</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a6-sound')">音樂與製作 Sound & Production</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a6-tracklist')">完整曲序 Tracklist</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a6-start')">新手入口 Start Here</button>
+        <button class="tab-btn" onclick="switchTab(this, 'a6-critic')">樂評觀點 Critic's View</button>
+      </div>
+
+      <div id="a6-concept" class="tab-content active">
+        <div class="content-box">
+          <span class="badge badge-fact">Official Fact</span>
+          <span class="badge badge-statement">Artist Statement</span>
+          <p>睽違六年推出的第六張全新專輯。田馥甄以「旅行與未知」形容創作歷程，英文名稱《The Land of Maybe》呼應法羅群島的自然氣息。她自述：「《要去什麼地方》完全是我人生現階段的寫照。感受過夏天的繁盛，欣賞過山頂的遼闊，接下來的路要去什麼地方？我帶著疑問走著。」</p>
+        </div>
+      </div>
+
+      <div id="a6-sound" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-critic">Critical Context</span>
+          <p><strong>Organic Soundscapes:</strong> 延續並昇華了近年《Live in Life》野地錄音的體驗，音樂充滿有機的有機聲響（Organic Sound）、大自然環境音采風與遼闊的樂器編制。人聲處理極度真實自然，展現與天地共振的開闊美學。</p>
+        </div>
+      </div>
+
+      <div id="a6-tracklist" class="tab-content">
+        <div class="tracklist-container">
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">01</span> 要去什麼地方</div><span>5:12</span></div>
+            <div class="track-body">Why it matters: 專輯同名核心大曲，以帶著疑問的優雅步伐走向生命下一個未知目的地。</div>
+          </div>
+          <div class="track-item" onclick="toggleTrack(this)">
+            <div class="track-header"><div class="track-title"><span class="track-num">02</span> 乘著無人光影的遠行</div><span>6:08</span></div>
+            <div class="track-body">Why it matters: 獨立單曲長篇史詩的延續，展現極高層次的生命張力。</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="a6-start" class="tab-content">
+        <div class="content-box">
+          <p><strong>入門推薦：</strong></p>
+          <ul style="padding-left:1.5rem; color:var(--text-muted);">
+            <li><strong>〈要去什麼地方〉：</strong> 體驗田馥甄 2026 年最新生命階段的開闊與坦然。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="a6-critic" class="tab-content">
+        <div class="content-box">
+          <span class="badge badge-critic">Critic's View</span>
+          <p>《要去什麼地方》展現了一位頂尖歌手在獲得金曲歌後肯定後，徹底擺脫流行市場拘束的自由姿態。這張作品不再追求傳統意義上的爆款流行曲，而是將音樂昇華為一場與大自然、自我生命深度對話的有機藝術展演。</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- 4. The Evolution -->
+  <section id="evolution">
+    <div class="section-title-wrapper">
+      <span class="section-subtitle">CURATED EVOLUTION</span>
+      <h2 class="section-title">六張專輯的音樂演變軌跡</h2>
+    </div>
+
+    <div class="evolution-grid">
+      <div class="evolution-card">
+        <h4>01. 探索自我 (2010-2011)</h4>
+        <p><strong>《To Hebe》→《My Love》</strong><br>從團體單飛出發，確立個人英式搖滾與文青氣質，視角從「自己」擴展至「對世間大愛的包容」。</p>
+      </div>
+      <div class="evolution-card">
+        <h4>02. 哲理與日常 (2013-2016)</h4>
+        <p><strong>《渺小》→《日常》</strong><br>經歷冰島冷冽電音哲學的極致碰撞後，反璞歸真拉回日常生活細節，風格轉為輕盈繽紛。</p>
+      </div>
+      <div class="evolution-card">
+        <h4>03. 時間與天地 (2020-2026)</h4>
+        <p><strong>《無人知曉》→《要去什麼地方》</strong><br>成立樂來樂好後，音樂製作達到集大成的成熟圓滿，並進一步融入大自然戶外野地采風，走向無邊際的生命探索。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Singles / Live in Life -->
+  <section id="singles">
+    <div class="section-title-wrapper">
+      <span class="section-subtitle">PROJECT & SINGLES</span>
+      <h2 class="section-title">Live in Life 實境錄音單曲脈絡</h2>
+    </div>
+
+    <div class="content-box">
+      <span class="badge badge-fact">Official Fact</span>
+      <p>田馥甄的「Live in Life」概念起源於 <strong>〈自己的房間〉</strong>，打破傳統錄音室封閉環境，將錄音設備搬至真實生活空間（如房間、三峽山林、野外溪谷）。</p>
+      <span class="badge badge-critic">Critic's View</span>
+      <p>這條單曲線路（〈自己的房間〉→〈現在是什麼時辰了〉→〈乘著無人光影的遠行〉→〈一二三〉）展現了田馥甄對「聲響捕捉與環境共鳴」的極高追求，直接孕育了後來的《田調》野地小巡演。</p>
+    </div>
+  </section>
+
+  <!-- 6. Live Concerts -->
+  <section id="live">
+    <div class="section-title-wrapper">
+      <span class="section-subtitle">LIVE CONCERTS</span>
+      <h2 class="section-title">三次大型巡迴演唱會</h2>
+    </div>
+
+    <div class="live-grid">
+      <div class="live-card">
+        <img class="live-img" src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?q=80&w=600&auto=format&fit=crop" alt="IF 演唱會">
+        <div class="live-content">
+          <span class="live-subtitle">2014 — 2017</span>
+          <h3 class="live-title">「如果 IF」/ IF PLUS</h3>
+          <p class="live-text">探索生命的無限可能性。以極具未來感與科技冰山視覺設計，配合《渺小》時期的冷冽音樂主題，呈現宏大的舞台震撼感。</p>
+        </div>
+      </div>
+
+      <div class="live-card">
+        <img class="live-img" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=600&auto=format&fit=crop" alt="一一 演唱會">
+        <div class="live-content">
+          <span class="live-subtitle">2020 — 2023</span>
+          <h3 class="live-title">「一一 ONE AFTER ANOTHER」</h3>
+          <p class="live-text">與《無人知曉》時期相扣，強調「把每一個自己收好」。舞台視覺充滿極簡藝術美學與純粹的光影空間感。</p>
+        </div>
+      </div>
+
+      <div class="live-card">
+        <img class="live-img" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop" alt="要去什麼地方 演唱會">
+        <div class="live-content">
+          <span class="live-subtitle">2026 年 12 月</span>
+          <h3 class="live-title">「要去什麼地方」小巨蛋巡演</h3>
+          <p class="live-text">配合第六張專輯，於台北小巨蛋連唱 6 場。將山海自然與旅程疑問搬上萬人舞台，展開全新的音樂對話。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Tian Diao -->
+  <section id="tian-diao">
+    <div class="section-title-wrapper">
+      <span class="section-subtitle">OUTDOOR EXPLORATION</span>
+      <h2 class="section-title">〈田調〉Live in Life 野地小巡演</h2>
+    </div>
+
+    <div class="content-box">
+      <span class="badge badge-fact">Official Fact</span>
+      <p><strong>《田調 Live in Life》：</strong> 2025 年 5 月至 7 月展開的野地小巡演。一改傳統室內體育館形式，田馥甄親自走訪台南井仔腳瓦盤鹽田、南投埔里虎嘯山嵐、高雄衛武營戶外劇場、屏東恆春聯福磚窯與暨南大學科班草坪。</p>
+      <span class="badge badge-critic">Critic's View</span>
+      <p>「田調」絕非單純把演唱會縮小，而是一場<strong>「去舞台化」的環境音樂實驗</strong>。演出以山海天地為背景，將風聲、鳥鳴與自然光影納入編曲的一部分，讓歌迷體驗真正「與天地共鳴」的音樂現場。</p>
+    </div>
+  </section>
+
+  <!-- Where Should I Start? Quiz -->
+  <section id="guide">
+    <div class="section-title-wrapper">
+      <span class="section-subtitle">INTERACTIVE GUIDE</span>
+      <h2 class="section-title">新手導覽：你最適合從哪張專輯開始？</h2>
+      <p style="color:var(--text-muted); margin-top:0.5rem;">選擇你目前的聽歌偏好，為你推薦專屬入口</p>
+    </div>
+
+    <div class="quiz-options">
+      <button class="quiz-btn" onclick="getRecommendation('lyrics')">📝 我最重視深刻的歌詞與文學感</button>
+      <button class="quiz-btn" onclick="getRecommendation('mature')">🏆 我想聽田馥甄唱功與製作最成熟的集大成之作</button>
+      <button class="quiz-btn" onclick="getRecommendation('experimental')">❄️ 我喜歡高冷、實驗性與強烈概念風格</button>
+      <button class="quiz-btn" onclick="getRecommendation('hits')">🔥 我只聽過熱門歌曲，想找最親切的入口</button>
+    </div>
+
+    <div id="quiz-result" class="recommendation-result">
+      <h3 id="rec-title" style="color:var(--accent-gold); font-size:1.5rem; margin-bottom:0.75rem;"></h3>
+      <p id="rec-desc" style="color:var(--text-main); font-size:1.05rem; line-height:1.8;"></p>
+    </div>
+  </section>
+
+  <footer style="text-align:center; padding: 4rem 2rem; color:var(--text-muted); border-top:1px solid var(--border-color); font-size:0.85rem;">
+    <p>田馥甄 Hebe Tien 音樂作品互動策展導覽網站</p>
+    <p style="margin-top:0.5rem; opacity:0.6;">資料取材自官方發行資訊、金曲獎紀錄與專業樂評分析。</p>
+  </footer>
+
+  <!-- Vanilla JS Interactive Logic -->
+  <script>
+    // Tab Switching
+    function switchTab(btn, contentId) {
+      const parent = btn.closest('.album-chapter');
+      parent.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      parent.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      
+      btn.classList.add('active');
+      document.getElementById(contentId).classList.add('active');
+    }
+
+    // Tracklist Accordion Toggle
+    function toggleTrack(item) {
+      item.classList.toggle('open');
+    }
+
+    // Interactive Quiz Logic
+    function getRecommendation(type) {
+      const resultBox = document.getElementById('quiz-result');
+      const title = document.getElementById('rec-title');
+      const desc = document.getElementById('rec-desc');
+
+      document.querySelectorAll('.quiz-btn').forEach(b => b.classList.remove('selected'));
+      event.currentTarget.classList.add('selected');
+
+      resultBox.style.display = 'block';
+
+      if (type === 'lyrics' || type === 'mature') {
+        title.innerText = '推薦首選：Album 05《無人知曉》(2020)';
+        desc.innerText = '這是田馥甄榮獲金曲歌後與最佳作詞、最佳製作人的集大成大碟。陳建騏與葛大為的完美操刀，將情感 secrets 與時間對話寫至極致。建議從〈無人知曉〉與〈懸日〉開始聆聽。';
+      } else if (type === 'experimental') {
+        title.innerText = '推薦首選：Album 03《渺小》(2013)';
+        desc.innerText = '遠赴冰島拍攝，融合辛波絲卡詩意與電子搖滾，展現田馥甄極致高冷與哲理思索的音樂美學。建議從同名曲〈渺小〉感受其強大聲響氣場。';
+      } else {
+        title.innerText = '推薦首選：Album 01《To Hebe》(2010)';
+        desc.innerText = '個人單飛的起點經典！兼具搖滾爆發力與獨立文青氣息，包含了經典神曲〈寂寞寂寞就好〉與展現獨特疏離感的〈離島〉，是认识她的最佳基石。';
+      }
+    }
+  </script>
+</body>
+</html>
